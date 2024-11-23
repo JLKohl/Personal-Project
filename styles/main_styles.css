@@ -83,3 +83,28 @@ footer {
     text-align: center;
 }
 
+/* game page */
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.gameSection {
+    background-color: var(--light-grey);
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+    border-radius: 10%;
+    text-align: center;
+    box-shadow: 10px 10px 5px 5px;
+}
+
+.button {
+    border-radius: 50%;
+    border: none; 
+    padding: 50px;
+ }
