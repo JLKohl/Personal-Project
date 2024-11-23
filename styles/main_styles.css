@@ -83,3 +83,40 @@ footer {
     text-align: center;
 }
 
+/* game page */
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.gameSection {
+    background-color: var(--light-grey);
+    grid-row: 1 / 6;
+    grid-column: 2 / 4;
+    border-radius: 10%;
+    text-align: center;
+    box-shadow: 10px 10px 5px 5px;
+}
+
+.pokemon-clicked{
+    height: 20vh;
+}
+
+.pokemon-clicked h3{
+
+}
+
+.pokemon-clicked img{
+    height: 10vh;
+}
+
+.pokemon-button {
+    background-color: var(--yellow);
+    padding: 10px;
+
+}
