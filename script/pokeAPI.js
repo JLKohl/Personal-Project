@@ -62,11 +62,10 @@ function fetchPokemonData(pokemon, button){
 
 function displayPokemonData(name, types, hp, sprite, button) {
     button.innerHTML = `<h3>${name}</h3>
-                        <p>HP: ${hp}</p>
                         <img src="${sprite}" 
                         alt="${name}"> `;
     button.classList.remove("pokemon-button");
     button.classList.add("pokemon-clicked");
 }
-
+// <p>HP: ${hp}</p>
 fetchRandomPokemons();
