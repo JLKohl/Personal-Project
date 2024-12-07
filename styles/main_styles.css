@@ -37,12 +37,14 @@ header, footer {
 
 .wrapper {
     display: grid;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     height: 100vh;
     width: 100vw;
     grid-gap: 10px;
-    padding: 10px 0px;
 }
 
 .sectionOne { 
@@ -85,27 +87,41 @@ footer {
 
 /* game page */
 
-.buttons-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-gap: 10px;
-    height: 100%;
-    width: 100%;
-}
-
 .gameSection {
+    box-sizing: border-box;
     background-color: var(--light-grey);
     grid-row: 1 / 6;
     grid-column: 2 / 4;
     border-radius: 10%;
     text-align: center;
     box-shadow: 10px 10px 5px 5px;
+    overflow: hidden;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pokemon-data, .pokemon-button {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    background: var(--light-grey);
+    border: none;
+    
 }
 
 .pokemon-clicked{
-    height: 20vh;
+    background-color: var(--royal-blue);
+    height: 30vh;
+    width: 20vh;
 }
+
+
 
 .pokemon-clicked h3{
 
@@ -113,10 +129,9 @@ footer {
 
 .pokemon-clicked img{
     height: 10vh;
+    padding: none;
 }
 
-.pokemon-button {
-    background-color: var(--yellow);
-    padding: 10px;
-
+.pokemon-button img {
+    height: 25vh;
 }
