@@ -1,6 +1,5 @@
-// document.getElementById('fetch-button').addEventListener('click', fetchRandomPokemons);
 
-function fetchRandomPokemons() {
+export function fetchRandomPokemons() {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
         .then(response => response.json())
         .then(allPokemon => {
@@ -17,7 +16,7 @@ function fetchRandomPokemons() {
 
 }
 
-function selectRandomPokemons(pokemonList, count) {
+ function selectRandomPokemons(pokemonList, count) {
     const shuffled = pokemonList.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
 }
@@ -32,6 +31,8 @@ function createFetchButton(pokemon) {
     buttonCounter++;
     button.id = `pokemon-button-${buttonCounter}`;
     
+    console.log(button.id)
+    
     const img = document.createElement("img");
     img.src = `images/pokeball.png`;
     img.alt = `pokeball`;
@@ -40,9 +41,12 @@ function createFetchButton(pokemon) {
     
     // button.textContent = `Fetch ${pokemon.name}`;
     button.onclick = () => {
+        console.log(`Button clicked: ${pokemon.name}`);
+        
         fetchPokemonData(pokemon, button);
     };
     buttonContainer.appendChild(button);
+    console.log(`Button for ${pokemon.name} created and added to container`);
 }
 
 function fetchPokemonData(pokemon, button){
@@ -67,5 +71,3 @@ function displayPokemonData(name, types, hp, sprite, button) {
     button.classList.remove("pokemon-button");
     button.classList.add("pokemon-clicked");
 }
-// <p>HP: ${hp}</p>
-fetchRandomPokemons();
