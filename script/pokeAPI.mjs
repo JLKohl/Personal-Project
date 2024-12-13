@@ -1,5 +1,7 @@
+import {gameResults} from "./gameResults.mjs";
+import {savePokemon} from "./savedPokemon.mjs";
 
-export function fetchRandomPokemons() {
+function fetchRandomPokemons() {
    return fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
         .then(response => {
             if (!response.ok) {
@@ -72,7 +74,7 @@ function fetchPokemonData(pokemon, button){
             
             displayPokemonData(name,  types,  hp, sprite, button);
             
-            pokemonsData.push({name, hp});
+            pokemonsData.push({name, hp, sprite});
             
             if (pokemonsData.length === 2){
                 determineStrongerPokemon();
@@ -97,17 +99,19 @@ function determineStrongerPokemon() {
     if (pokemonsData.length !== 2) return;
 
     const [pokemon1, pokemon2] = pokemonsData;
-
+    let result;
+    
     if (pokemon1.hp > pokemon2.hp) {
-        console.log(`${pokemon1.name} is stronger with ${pokemon1.hp} HP.`);
+        result = "winner"
     } else if (pokemon1.hp < pokemon2.hp) {
-        console.log(`${pokemon2.name} is stronger with ${pokemon2.hp} HP.`);
+       result = "loser"
     } else {
-        console.log(`${pokemon1.name} and ${pokemon2.name} have the same HP.`);
+       result = "tie"
     }
 
     // Clear the comparison state after evaluating
     pokemonsData = [];
+    gameResults(result, pokemon1, pokemon2);
 }
 
 fetchRandomPokemons();
