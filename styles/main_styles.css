@@ -151,6 +151,17 @@ footer {
     padding: 10px 0;
 }
 
+.modal a {
+    color: var(--yellow); /* Default color for links */
+    text-decoration: underline; /* Underline the link */
+    font-weight: bold; /* Make it slightly bold */
+}
+
+.modal a:hover {
+    color: darkblue; /* Change color when hovered over */
+    text-decoration: none; /* Remove underline on hover (optional) */
+}
+
 .close-button {
     color: #aaa;
     float: right;
@@ -166,6 +177,11 @@ footer {
 }
 
 /*pokedeck display*/
+#pokedeck {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 20px;
+}
 .pokedeck-container p{
     text-align: center;
 }
@@ -198,4 +214,14 @@ footer {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
     width: 175px;
+}
+
+/*rules page*/
+
+#rules {
+    padding: 0 25px 25px 20px;
+}
+
+#rules a {
+    text-decoration: underline;
 }
