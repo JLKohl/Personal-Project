@@ -5,7 +5,7 @@ function printPokedeck() {
    const winnerContainer = document.getElementById("winner-container");
    
    if (winnerData.length === 0) {
-       winnerContainer.innerHTML = "<p>You have not caught any pokémon yet! Play the game and catch 'em all!!</p>";
+       winnerContainer.innerHTML = "<p>You have not caught any pokémon yet! <a href='game.html'>Play the game </a>and catch 'em all!!</p>";
    } else {
        winnerData.forEach((entry, index) => {
           const pokemonCard = document.createElement("div");

@@ -24,3 +24,4 @@ export function savePokemon(winnerPokemon1, winnerPokemon2) {
 
 const savedWinners = JSON.parse(localStorage.getItem("winnerPokemonList")) || [];
 console.log(savedWinners);
+

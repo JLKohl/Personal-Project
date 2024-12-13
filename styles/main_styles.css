@@ -15,7 +15,7 @@
 
     --blue: #47699D;
 
-    --light-purple: #ccbecf;
+    --light-purple: #d4cad7;
 }
 
 body {
@@ -163,4 +163,39 @@ footer {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/*pokedeck display*/
+.pokedeck-container p{
+    text-align: center;
+}
+
+.pokedeck-container a{
+    text-decoration: underline;
+}
+
+.pokedeck-container a:hover {
+    color: white;
+}
+
+#winner-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+}
+
+.pokemon-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--light-purple);
+    color: black;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    width: 175px;
 }
